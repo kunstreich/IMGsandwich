@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>IMGsandwich</title>
+		<style>
+		.container { width: 600px; margin: 0 auto; padding-top: 200px; }
+		nav { font: italic 12px/1.75 Corbel,'Lucidia Grande','Lucida Sans','Lucida Sans Unicode',Arial,sans-serif; overflow: auto; }
+		nav a {
+			float: right;
+			margin-right: 17px;
+			color: #fff;
+			text-decoration:none;
+		}
+		nav a:first-child {
+			float: left;
+			margin-left: 17px;
+		}
+		nav a span {
+			background: url(sprite.png) repeat-x 0 -24px;
+			height: 24px;
+			display: inline-block;
+			padding: 0 8px;
+			position: relative;
+		}
+		/* all red bg */
+		nav a span:hover {
+			background-position: 0 -144px;
+		}
+		/* no positions */
+		nav a span:before,
+		nav a span:after 
+		{
+			content:"";
+			position: absolute;
+			height: 24px;
+			width: 17px;
+			background: url(sprite.png) no-repeat;
+		}
+		/* links hintern */
+		nav a span.forward:before {
+			left: -17px;
+			background-position: 12px 0;
+		}
+			nav a span.forward:hover:before { background-position: 12px -120px; }
+
+		/* links spitze */
+		nav a span.forward:after {
+			right: -17px;
+			background-position: 0 -48px;
+		}
+			nav a span.forward:hover:after { background-position: 0 -168px; }
+
+		/* rechts hintern */
+		nav a span.backward:after {
+			right: -17px;
+			background-position: 0 -72px;
+		}
+			nav a span.backward:hover:before { background-position: 0 -216px; }
+		/* rechts spitze */
+		nav a span.backward:before {
+			left: -17px;
+			background-position: 0px -96px;
+		}
+			nav a span.backward:hover:after { background-position: 0px -192px; }
+		
+		</style>
+</head>
+<body>
+	<div class="container">
+		<!-- example -->
+		<nav>
+			<a href="" ><span class="forward">newer</span></a> 
+			<a href="" ><span class="backward">older</span></a>
+		</nav>
+	</div>
+</body>
+</html>
